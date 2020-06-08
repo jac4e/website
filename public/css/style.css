@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
+
+body {
+  background-image: url('/imgs/background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Roboto Mono', monospace;
+  height: 100vh;
+  color: white;
+  overflow: hidden;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+.main-content {
+  backdrop-filter: blur(5px) contrast(70%) brightness(50%);
+  -webkit-backdrop-filter: blur(5px) contrast(70%) brightness(50%);
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  margin: -10 -10 -10 -10;
+}
+
+.icon {
+  font-size: 32px;
+}
+
+.footer-text{
+  font-size: 12px;
+}
+
+.cursor {
+  animation: cursor 1200ms steps(1) infinite;
+  display: inline-block;
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 0
+  }
+  50% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
+
+@media (max-width: 767.98px){
+  .title {
+    font-size: 3vw;
+  }
+}
+@media (max-width: 575.98px){
+  .title {
+    font-size: 4vw;
+  }
+}
+
