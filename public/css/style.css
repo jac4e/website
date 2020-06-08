@@ -2,11 +2,19 @@
 
 body {
   background-image: url('/imgs/background.jpg');
+<<<<<<< Updated upstream
   background-position: center;
+=======
+  background-position: top;
+>>>>>>> Stashed changes
   background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Roboto Mono', monospace;
   height: 100vh;
+<<<<<<< Updated upstream
+=======
+  width: 100vw;
+>>>>>>> Stashed changes
   color: white;
   overflow: hidden;
 }
@@ -17,6 +25,7 @@ ul {
   padding-left: 0px;
 }
 
+<<<<<<< Updated upstream
 .main-content {
   backdrop-filter: blur(5px) contrast(70%) brightness(50%);
   -webkit-backdrop-filter: blur(5px) contrast(70%) brightness(50%);
@@ -25,13 +34,48 @@ ul {
   display: flex;
   align-items: center;
   margin: -10 -10 -10 -10;
+=======
+.overlay{
+  backdrop-filter: blur(5px) contrast(70%) brightness(50%);
+  -webkit-backdrop-filter: blur(5px) contrast(70%) brightness(50%);
+  height: 100vh;
+}
+
+.main-content {
+  height: 80vh;
+  overflow-y: scroll;
+}
+
+#input {
+  width: 0px;
+  float: none;
+  display: inline-block;
+}
+
+#input input {
+  width: auto;
+  background-color: hsla(180, 50%, 50%, 0);
+  border: 0px none black;
+  color: transparent;
+  text-shadow: 0 0 0 white;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+#input input:focus {
+  outline: none;
+>>>>>>> Stashed changes
 }
 
 .icon {
   font-size: 32px;
 }
 
+<<<<<<< Updated upstream
 .footer-text{
+=======
+.footer-text {
+>>>>>>> Stashed changes
   font-size: 12px;
 }
 
@@ -44,14 +88,23 @@ ul {
   0% {
     opacity: 0
   }
+<<<<<<< Updated upstream
   50% {
     opacity: 1
   }
+=======
+
+  50% {
+    opacity: 1
+  }
+
+>>>>>>> Stashed changes
   100% {
     opacity: 0
   }
 }
 
+<<<<<<< Updated upstream
 @media (max-width: 767.98px){
   .title {
     font-size: 3vw;
@@ -63,3 +116,28 @@ ul {
   }
 }
 
+=======
+@media (max-width: 767.98px) {
+  .title {
+    font-size: 3vw;
+  }
+  #input input {
+    font-size: 3vw;
+  }
+  .main-content {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .title {
+    font-size: 4vw;
+  }
+  #input input {
+    font-size: 4vw;
+  }
+  .main-content {
+    height: 80vh;
+  }
+}
+>>>>>>> Stashed changes
