@@ -27,6 +27,11 @@ ul {
 .main-content {
   height: 80vh;
   overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#output {
+  color: lightslategray;
 }
 
 #input {

@@ -1,3 +1,4 @@
+import React from 'react';
 const e = React.createElement
 
 class virtualConsole extends React.Component {
@@ -10,9 +11,9 @@ class virtualConsole extends React.Component {
         }
         this.loadState()
         this.handleKeyDown = this.handleKeyDown.bind(this)
-        this.directory = ['/home']
+        this.directory = []
         let dirElement = document.querySelector('#directoryElement')
-        for(let i =0; i<dirElement.children.length; i++) {
+        for (let i = 0; i < dirElement.children.length; i++) {
             this.directory.push(dirElement.children[i].innerText)
         }
     }
@@ -20,7 +21,7 @@ class virtualConsole extends React.Component {
         return e('input', {
             type: 'text',
             autoFocus: 'true',
-            class: 'p-0',
+            className: 'p-0',
             value: this.state.command,
             onChange: this.handleKeyDown,
             onKeyDown: this.handleKeyDown
@@ -32,13 +33,10 @@ class virtualConsole extends React.Component {
         if (e.keyCode == 8) {
             e.target.value = e.target.value.slice(0, -1)
         }
-        console.log(e.target.value.length)
         // Max Length
-        if (e.target.value.length == 21 && e.keyCode != 13) {
-            return
-        }
-        console.log(e.keyCode)
-        console.log(e.target.value)
+        // if (e.target.value.length == 21 && e.keyCode != 13) {
+        //     return
+        // }
         // Any character key
         if (e.key.length == 1) {
             e.target.value = e.target.value.concat(e.key)
@@ -63,7 +61,6 @@ class virtualConsole extends React.Component {
         }
         // Enter
         if (e.keyCode == 13) {
-            console.log(e.target.value)
             this.state.history = this.state.history.concat(this.state.command)
             this.parse(this.state.command)
             this.state.position = 0
@@ -80,8 +77,7 @@ class virtualConsole extends React.Component {
     loadState() {
         try {
             this.state.history = window.sessionStorage.getItem('history').split(',')
-        }
-        catch(err) {
+        } catch (err) {
             this.state.history = []
         }
     }
@@ -93,33 +89,36 @@ class virtualConsole extends React.Component {
         let cmdList = ['cd', 'ls', 'help']
         switch (cmd) {
             case "cd":
-                if(args.length!=1) {
+                if (args.length > 1) {
                     output.innerText = "cd: invalid arguments. see 'cd -h' for help"
                     break
-                }
-                if(args[0] == '-h'){
-                    output.innerText = "usage: cd path"
+                } else {
+                    if (args.length == 0) {
+                        window.location.href = ""
+                    } else if (args[0] == '-h') {
+                        output.innerText = "usage: cd path"
+                    } else if (args[0].match(/^(..\/)+$/g)) {
+                        window.location.href = args[0]
+                    } else if (args[0].match(/^\/?(?:[^/\n\s\\]+\/?)+$/g)) {
+                        console.log(args[0])
+                        window.location.href = encodeURIComponent(args[0])
+                    } else {
+                        output.innerText = `cd: no such file or directory: ${args[0]}`
+                    }
                     break
                 }
-                if(this.directory.includes(args[0])){
-                    window.location.href = args[0]
-                } else {
-                    output.innerText = `cd: no such file or directory: ${args[0]}`
-                }
-                break
-            case "ls":
-                output.innerText = this.directory
-                break
-            case "help":
-                if(args.length>0){
-                    output.innerText = 'help: invalid arguments'
-                } else {
-                    output.innerText = `command list: ${cmdList}`
-                }
-                break
-            default:
-                console.log('test')
-                output.innerText = `jss: command not found: ${cmd}`
+                case "ls":
+                    output.innerText = this.directory
+                    break
+                case "help":
+                    if (args.length > 0) {
+                        output.innerText = 'help: invalid arguments'
+                    } else {
+                        output.innerText = `command list: ${cmdList}`
+                    }
+                    break
+                default:
+                    output.innerText = `jss: command not found: ${cmd}`
         }
         this.saveState()
     }
