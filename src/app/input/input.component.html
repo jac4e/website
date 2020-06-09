@@ -1,0 +1,5 @@
+<span id="input" (click)="onClick($event)">
+    <input maxLength="{{width}}" style="width:{{width}}ch;" (focus)="focus(true)" (focusout)="focus(false)" (keyup)="onInput($event)" (keydown)="onInput($event)" (input)="onInput($event)">
+    <span style="margin-left:{{horzPosition}}ch;" id="cursor">▯</span>
+</span>
+<p>{{ output }}</p>

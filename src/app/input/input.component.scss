@@ -1,0 +1,11 @@
+input {
+  background-color: hsla(0, 0%, 0%, 0);
+  border: 0 none #000;
+  color: transparent;
+  text-shadow: 0 0 0 white;
+  padding: 0 0 0 0;
+  z-index: 2;
+}
+input:focus {
+  outline: none;
+}
