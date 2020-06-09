@@ -18,7 +18,6 @@ export class InputComponent implements OnInit {
     this.output = 'test';
     this.width = 21;
     this.horzPosition = -this.width;
-    this.cursorBlink('start');
   }
   cursorBlink(state: string){
     const cursor = document.querySelector('#cursor') as HTMLElement;
@@ -27,9 +26,8 @@ export class InputComponent implements OnInit {
     }
     if (state === 'stop'){
       window.clearInterval(this.blinkInterval);
-      cursor.style.opacity = (0).toString();
-    } else if (state === 'start'){
       cursor.style.opacity = (1).toString();
+    } else if (state === 'start'){
       this.blinkInterval = window.setInterval(blink, 1100);
     }
   }
@@ -52,10 +50,8 @@ export class InputComponent implements OnInit {
   }
   focus(isFocused: boolean){
     const cursor = document.querySelector('#cursor') as HTMLElement;
-    if (isFocused){
-       cursor.innerText = '▮';
-    } else {
-      cursor.innerText = '▯';
+    if (!isFocused){
+      this.cursorBlink('stop');
     }
   }
 }
