@@ -8,9 +8,9 @@ function searchArray(arr: object[], key: string, str: string, all: boolean): any
         return;
       }
       if (typeof dataToCheck === 'string'){
-        return dataToCheck.toLowerCase().includes(str.toLowerCase());
+        return dataToCheck.toLowerCase() === str.toLowerCase();
       } else {
-        return dataToCheck.some( (o) => o.toLowerCase().includes(str.toLowerCase()));
+        return dataToCheck.some( (o) => o.toLowerCase() === str.toLowerCase() );
       }
     });
     return results;
