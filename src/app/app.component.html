@@ -1,16 +1,28 @@
 <div class="background"></div>
 <div class="container">
-      <div class="row header justify-content-center">
-            <div class="col-12">
-                  <h1>jacques@fourie:{{ location }}$</h1>
-                  <app-input></app-input>
-            </div>
+  <div class='scrollable'>
+    <div class="row header justify-content-center">
+      <!-- replace with navbar component -->
+      <nav class="col-12 navbar navbar-expand">
+        <ul class="navbar-nav" id="directoryElement">
+          <li class="nav-item mr-2">
+            <a href='/about'>/about</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="col-12">
+        <h1 class="m-0">jacques@fourie:{{ location }}$<app-input></app-input></h1>
       </div>
-      <div class="row content justify-content-center">
-            
+      <div>
+            <!-- add command component -->
       </div>
-      <div class="row footer justify-content-center">
-            
-      </div>
+    </div>
+    <div class="row content justify-content-center">f
+
+    </div>
+  </div>
+  <div class="row footer justify-content-center">
+
+  </div>
 </div>
 <router-outlet></router-outlet>

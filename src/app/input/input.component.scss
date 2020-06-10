@@ -1,10 +1,17 @@
 input {
+  font-weight: inherit;
   background-color: hsla(0, 0%, 0%, 0);
   border: 0 none #000;
   color: white;
   caret-color: transparent;
   padding: 0 0 0 0;
   z-index: 2;
+}
+#cursor{
+  color:rgba($color: #FFF, $alpha: 0.7)
+}
+p {
+  word-wrap: break-word;
 }
 input:focus {
   outline: none;
