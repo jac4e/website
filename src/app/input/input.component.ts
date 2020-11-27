@@ -125,7 +125,8 @@ export class InputComponent implements OnInit {
   }
   onClick(e) {
     this.updateCursorPos(e.target.selectionStart);
-    document.querySelector('#input').firstChild.focus();
+    const input = document.querySelector('#input').firstChild as HTMLElement;
+    input.focus();
   }
   focus(isFocused: boolean) {
     const cursor = document.querySelector('#cursor') as HTMLElement;
