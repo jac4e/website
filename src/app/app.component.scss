@@ -1,18 +1,81 @@
 .scrollable {
   overflow-y: scroll;
-}
-.header div h1 {
-  border: thin solid black;
+  height: 100vh;
 }
 
-@media (max-width: 767.98px) {
+.stuck {
+  position: fixed;
+  margin-top: 0px !important;
+  top: 0;
+}
+
+.header {
+  z-index: 2;
+  margin-top: 40vh;
+  padding:10px 0px 10px 0px;
+  width: 100%;
+  top: 0;
+}
+.header div h1 {
+  overflow: hidden;
+}
+
+.header div h1 span {
+  position: absolute;
+  display: inline;
+}
+
+.output {
+  color: slategrey;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.content {
+  z-index: 1;
+  margin-bottom: 25vh;
+}
+footer {
+  padding-top: 30px;
+  padding-bottom: 50px;
+  z-index: 2;
+  position: sticky;
+  bottom: 0;
+}
+footer ul {
+  list-style-type: none;
+  display: flex;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+footer i {
+  padding: 0px 10px 0px 10px;
+  font-size: 32px;
+}
+footer p {
+  font-size: 12px;
+}
+
+@media (max-width: 1199.98px) {
   .header div h1 {
     font-size: 3vw;
   }
 }
 
+@media (max-width: 991.98px) {
+  .header div h1 {
+    font-size: 2.5vw;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .header div h1 {
+    font-size: 2dvw;
+  }
+}
+
 @media (max-width: 575.98px) {
   .header div h1 {
-    font-size: 3vw;
+    font-size: 1rem;
   }
 }
