@@ -60,7 +60,7 @@ export class InputComponent implements OnInit {
     this.cursorBlink('start');
   }
   onClick(e) {
-    const input = document.querySelector('#input') as HTMLElement;
+    const input = document.querySelector('#input') as HTMLInputElement;
     this.updateCursorPos(input.selectionStart);
     input.focus();
   }
