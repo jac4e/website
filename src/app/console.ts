@@ -68,14 +68,12 @@ export const COMMANDS = [
       if (args.length > 1) {
         return [``, 3];
       } else if (args.length === 0) {
-        this.location = '~';
         this.router.navigateByUrl('');
         return ['', 2];
       } else {
         const result = searchArray(DIRECTORY, 'path', args[0], false);
         if (result.length > 0) {
           console.log(this);
-          this.location = result[0].location;
           this.router.navigateByUrl(result[0].url);
           return ['', 2];
         } else {

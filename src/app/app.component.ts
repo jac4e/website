@@ -1,7 +1,7 @@
 import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import { InputComponent } from './input/input.component';
 import { state, searchArray, parse, DIRECTORY, COMMANDS } from './console';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,15 +11,26 @@ import { Router } from '@angular/router';
 
 export class AppComponent implements AfterViewInit {
   @ViewChild(InputComponent) userinput;
-  constructor(private router: Router) { }
-  title = 'website';
   location = '~';
+  constructor(private router: Router) {
+    router.events.subscribe((event) => {
+      // see also 
+      if (event instanceof NavigationEnd) {
+        if(window.location.pathname=='/'){
+          this.location = '~';
+        } else {
+          this.location = '~'+window.location.pathname;
+        }
+      }
+    });
+  }
+  title = 'website';
   theme = "slategray"
   command: string;
   output = 'Click the square and try \'help\'...';
-  ngAfterViewInit(){
+  ngAfterViewInit() {
   }
-  onCommand(e){
+  onCommand(e) {
     // Need to add basic error handling here.
     this.command = e;
     // Parse command into command and argument
