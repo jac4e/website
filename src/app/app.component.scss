@@ -1,5 +1,32 @@
 .scrollable {
   overflow-y: scroll;
+  background: inherit;
+  height: 70vh;
+  width: 100%;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128,0.5);
+  border-radius: 25px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128,1);
+}
+
+
+.background {
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  width: 100vw;
   height: 100vh;
 }
 
@@ -11,7 +38,8 @@
 
 .header {
   z-index: 2;
-  margin-top: 40vh;
+  //margin-top: 40vh;
+  background: inherit;
   padding:10px 0px 10px 0px;
   width: 100%;
   top: 0;

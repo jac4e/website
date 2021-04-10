@@ -1,55 +1,57 @@
-<div class="scrollable container justify-content-center" appStickyHeader>
-  <div class="header row">
-        <!-- replace with navbar component or dynamically loaded from directory-->
-        <nav class="col-12 py-0 navbar navbar-expand">
-          <ul class="navbar-nav" id="directoryElement">
-            <li class="nav-item mr-2">
-              <a routerLink='/about'>about</a>
-            </li>
-            <li class="nav-item mr-2">
-              <a routerLink='/projects'>resume</a>
-            </li>
-            <li class="nav-item mr-2">
-              <a routerLink='/resume'>resume</a>
-            </li>
-            <li class="nav-item mr-2">
-              <a routerLink='/contact'>contact</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="col-12">
-          <h1 class="m-0">jacques@fourie:{{ location }}$<app-input (commandSubmit)="onCommand($event)"></app-input>
-          </h1>
-        </div>
-        <div class="col-12">
-          <p class="output my-0">{{ output }}</p>
-        </div>
-  </div>
-  <div class="row">
-    <router-outlet></router-outlet>
-  </div>
-  <footer class="row">
-    <div class="col-12">
-      <ul class="justify-content-center">
-        <li>
-          <a href="https://github.com/jac4e">
-            <i class="fab fa-github-square icon"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://stackoverflow.com/users/9062102/jac4e?tab=profile">
-            <i class="fab fa-stack-overflow icon"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://linkedin.com/in/jacques-fourie-6500a0194">
-            <i class="fab fa-linkedin icon"></i>
-          </a>
-        </li>
-      </ul>
+<div class="{{ theme }} background">
+  <div class="container" >
+    <div class="header row {{ theme }}">
+      <!-- replace with navbar component or dynamically loaded from directory-->
+      <nav class="col-12 py-0 navbar navbar-expand">
+        <ul class="navbar-nav" id="directoryElement">
+          <li class="nav-item mr-2">
+            <a routerLink='/about'>about</a>
+          </li>
+          <li class="nav-item mr-2">
+            <a routerLink='/projects'>projects</a>
+          </li>
+          <li class="nav-item mr-2">
+            <a routerLink='/resume'>resume</a>
+          </li>
+          <li class="nav-item mr-2">
+            <a routerLink='/contact'>contact</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="col-12">
+        <h1 class="m-0">jacques@fourie:{{ location }}$<app-input (commandSubmit)="onCommand($event)"></app-input>
+        </h1>
+      </div>
+      <div class="col-12">
+        <p class="output my-0">{{ output }}</p>
+      </div>
     </div>
-    <div class="col-12">
-      <p class="footer-text text-center">Copyright 2021 - Jacques Fourie</p>
+    <div class="row scrollable ">
+      <router-outlet></router-outlet>
     </div>
-  </footer>
+    <footer class="row {{ theme }}">
+      <div class="col-12">
+        <ul class="justify-content-center">
+          <li>
+            <a href="https://github.com/jac4e">
+              <i class="fab fa-github-square icon"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://stackoverflow.com/users/9062102/jac4e?tab=profile">
+              <i class="fab fa-stack-overflow icon"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/jacques-fourie-6500a0194">
+              <i class="fab fa-linkedin icon"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12">
+        <p class="footer-text text-center">Copyright 2021 - Jacques Fourie</p>
+      </div>
+    </footer>
+  </div>
 </div>
