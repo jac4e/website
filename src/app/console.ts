@@ -38,9 +38,9 @@ export const DIRECTORY = [
     url: '/about'
   },
   {
-    path: ['blog'],
-    location: 'blog',
-    url: '/blog'
+    path: ['projects'],
+    location: 'projects',
+    url: '/projects'
   },
   {
     path: ['resume'],
