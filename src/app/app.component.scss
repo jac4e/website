@@ -29,6 +29,77 @@
   width: 100vw;
   height: 100vh;
 }
+// Themes
+.theme-slategray {
+  background-color: rgb(59, 76, 90);
+  color: white;
+  font-family: 'Roboto Mono', monospace;
+}
+.theme-classic {
+  background-color: rgb(0, 0, 0);
+  color: rgb(141, 250, 146);
+  font-family: 'Roboto Mono', monospace;
+}
+
+.theme-classic a:link{
+  color: rgb(59, 201, 66);
+}
+.theme-classic a:visited{
+  color: rgb(59, 201, 66);
+  
+}
+.theme-classic a:hover{
+  color: rgb(49, 163, 55);
+  
+}
+
+.theme-bright {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-family: 'Roboto Mono', monospace;
+}
+
+
+.theme-bright a:link{
+  color: rgb(83, 83, 83);
+}
+.theme-bright a:visited{
+  color: rgb(83, 83, 83);
+  
+}
+.theme-bright a:hover{
+  color: rgb(61, 61, 61);
+  
+}
+
+.theme-rgb {
+	animation-name: backgroundColorPalette;
+	animation-duration: 8s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+  font-family: 'Roboto Mono', monospace;
+  color: white;
+}
+
+@keyframes backgroundColorPalette {
+	0% {
+		background: #a3413a;
+	}
+	25% {
+		background: #3f8b62;
+	}
+	50% {
+		background: #6a9952;
+	}
+	75% {
+		background: #a88f53;
+	}
+	100% {
+		background: #ac6859;
+	}
+}
+
+
 
 .stuck {
   position: fixed;
@@ -54,7 +125,7 @@
 }
 
 .output {
-  color: slategrey;
+  opacity: 0.5;
   white-space: pre-wrap;
   overflow-wrap: break-word;
 }

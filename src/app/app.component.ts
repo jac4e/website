@@ -6,13 +6,15 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
+
 export class AppComponent implements AfterViewInit {
   @ViewChild(InputComponent) userinput;
   constructor(private router: Router) { }
   title = 'website';
   location = '~';
+  theme = "slategray"
   command: string;
   output = 'Try \'help\'...';
   ngAfterViewInit(){

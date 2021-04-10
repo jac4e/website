@@ -2,13 +2,14 @@ input {
   font-weight: inherit;
   background-color: hsla(0, 0%, 0%, 0);
   border: 0 none #000;
-  color: white;
+  color: inherit;
   caret-color: transparent;
   padding: 0 0 0 0;
   z-index: 2;
 }
 #cursor{
-  color:rgba($color: #FFF, $alpha: 0.7)
+  color:inherit;
+  opacity: 0.7;
 }
 p {
   word-wrap: break-word;

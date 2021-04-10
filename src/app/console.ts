@@ -110,12 +110,21 @@ export const COMMANDS = [
     }
   },
   {
-    name: 'ct',
-    usage: 'theme',
-    desc: '[WIP] changes the current theme',
+    name: 'theme',
+    usage: '[options] [theme]',
+    desc: '[WIP] changes the current theme. use "theme --list" to list current available themes',
     func(args: string[]) {
+      if (args[0]=='--list'){
+        let toPrint = 'available themes:\n';
+        THEMES.forEach(theme => {
+          console.log(theme);
+          toPrint += theme + '\t';
+        });
+        return [toPrint, 2];
+      }
       if (args.length === 1) {
         if (THEMES.includes(args[0])){
+          this.theme = args[0];
           return ['', 2];
         }
       } else {
@@ -125,4 +134,4 @@ export const COMMANDS = [
   }
 ];
 
-const THEMES = ['pear'];
+const THEMES = ['slategray','classic','bright','rgb'];
