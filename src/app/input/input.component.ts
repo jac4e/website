@@ -57,12 +57,11 @@ export class InputComponent implements OnInit {
     } else if (pos > this.width) {
       this.cursorPosition = 0;
     }
-    console.log(this.cursorPosition);
     this.cursorBlink('start');
   }
   onClick(e) {
-    this.updateCursorPos(e.target.selectionStart);
-    const input = document.querySelector('#input').firstChild as HTMLElement;
+    const input = document.querySelector('#input') as HTMLElement;
+    this.updateCursorPos(input.selectionStart);
     input.focus();
   }
   focus(isFocused: boolean) {
