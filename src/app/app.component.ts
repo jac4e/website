@@ -16,7 +16,7 @@ export class AppComponent implements AfterViewInit {
   location = '~';
   theme = "slategray"
   command: string;
-  output = 'This website contains a simulated command line, click the square and try \'help\'...';
+  output = 'Click the square and try \'help\'...';
   ngAfterViewInit(){
   }
   onCommand(e){

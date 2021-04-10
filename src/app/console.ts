@@ -94,8 +94,9 @@ export const COMMANDS = [
         let toPrint = 'available commands:\n';
         COMMANDS.forEach(command => {
           console.log(command);
-          toPrint += command.name + '\t';
+          toPrint += command.name + '    ';
         });
+        toPrint += '\nUse "help [command]" for detailed usage of specified command';
         return [toPrint, 2];
       } else if (args.length === 1) {
         // Search command array for args[0]
@@ -118,7 +119,7 @@ export const COMMANDS = [
         let toPrint = 'available themes:\n';
         THEMES.forEach(theme => {
           console.log(theme);
-          toPrint += theme + '\t';
+          toPrint += theme + '    ';
         });
         return [toPrint, 2];
       }
