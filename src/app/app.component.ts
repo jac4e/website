@@ -1,23 +1,36 @@
 import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import { InputComponent } from './input/input.component';
 import { state, searchArray, parse, DIRECTORY, COMMANDS } from './console';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
+
 export class AppComponent implements AfterViewInit {
   @ViewChild(InputComponent) userinput;
-  constructor(private router: Router) { }
-  title = 'website';
   location = '~';
-  command: string;
-  output = 'Try \'help\'...';
-  ngAfterViewInit(){
+  constructor(private router: Router) {
+    router.events.subscribe((event) => {
+      // see also 
+      if (event instanceof NavigationEnd) {
+        if(window.location.pathname=='/'){
+          this.location = '~';
+        } else {
+          this.location = '~'+window.location.pathname;
+        }
+      }
+    });
   }
-  onCommand(e){
+  title = 'website';
+  theme = "slategray"
+  command: string;
+  output = 'Click the square and try \'help\'...';
+  ngAfterViewInit() {
+  }
+  onCommand(e) {
     // Need to add basic error handling here.
     this.command = e;
     // Parse command into command and argument

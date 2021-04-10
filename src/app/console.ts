@@ -38,9 +38,9 @@ export const DIRECTORY = [
     url: '/about'
   },
   {
-    path: ['blog'],
-    location: 'blog',
-    url: '/blog'
+    path: ['projects'],
+    location: 'projects',
+    url: '/projects'
   },
   {
     path: ['resume'],
@@ -68,14 +68,12 @@ export const COMMANDS = [
       if (args.length > 1) {
         return [``, 3];
       } else if (args.length === 0) {
-        this.location = '~';
         this.router.navigateByUrl('');
         return ['', 2];
       } else {
         const result = searchArray(DIRECTORY, 'path', args[0], false);
         if (result.length > 0) {
           console.log(this);
-          this.location = result[0].location;
           this.router.navigateByUrl(result[0].url);
           return ['', 2];
         } else {
@@ -94,8 +92,9 @@ export const COMMANDS = [
         let toPrint = 'available commands:\n';
         COMMANDS.forEach(command => {
           console.log(command);
-          toPrint += command.name + '\t';
+          toPrint += command.name + '    ';
         });
+        toPrint += '\nUse "help [command]" for detailed usage of specified command';
         return [toPrint, 2];
       } else if (args.length === 1) {
         // Search command array for args[0]
@@ -110,12 +109,21 @@ export const COMMANDS = [
     }
   },
   {
-    name: 'ct',
-    usage: 'theme',
-    desc: '[WIP] changes the current theme',
+    name: 'theme',
+    usage: '[options] [theme]',
+    desc: '[WIP] changes the current theme. use "theme --list" to list current available themes',
     func(args: string[]) {
+      if (args[0]=='--list'){
+        let toPrint = 'available themes:\n';
+        THEMES.forEach(theme => {
+          console.log(theme);
+          toPrint += theme + '    ';
+        });
+        return [toPrint, 2];
+      }
       if (args.length === 1) {
         if (THEMES.includes(args[0])){
+          this.theme = args[0];
           return ['', 2];
         }
       } else {
@@ -125,4 +133,4 @@ export const COMMANDS = [
   }
 ];
 
-const THEMES = ['pear'];
+const THEMES = ['slategray','classic','bright','rgb'];

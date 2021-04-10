@@ -57,16 +57,11 @@ export class InputComponent implements OnInit {
     } else if (pos > this.width) {
       this.cursorPosition = 0;
     }
-    console.log(this.cursorPosition);
     this.cursorBlink('start');
   }
   onClick(e) {
-    this.updateCursorPos(e.target.selectionStart);
-<<<<<<< HEAD
-    const input = document.querySelector('#input').firstChild;
-=======
-    const input = document.querySelector('#input').firstChild as HTMLElement;
->>>>>>> 5446c13... Fixed type error in onClick()
+    const input = document.querySelector('#input') as HTMLInputElement;
+    this.updateCursorPos(input.selectionStart);
     input.focus();
   }
   focus(isFocused: boolean) {
