@@ -60,5 +60,7 @@ export class AppComponent implements AfterViewInit {
       }
     }
     // Update Console State
+    var content = document.querySelector('.scrollable') as HTMLElement;
+    content.scrollTop = 0;
   }
 }

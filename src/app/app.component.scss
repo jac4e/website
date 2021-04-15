@@ -1,7 +1,6 @@
 .scrollable {
   overflow-y: scroll;
   background: inherit;
-  height: 70vh;
   width: 100%;
 }
 
@@ -29,6 +28,7 @@
   width: 100vw;
   height: 100vh;
 }
+
 // Themes
 .theme-slategray {
   background-color: rgb(59, 76, 90);
@@ -40,7 +40,6 @@
   color: rgb(177, 255, 181);
   font-family: 'Roboto Mono', monospace;
 }
-
 .theme-classic a:link{
   color: rgb(59, 201, 66);
 }
@@ -52,14 +51,11 @@
   color: rgb(49, 163, 55);
   
 }
-
 .theme-bright {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   font-family: 'Roboto Mono', monospace;
 }
-
-
 .theme-bright a:link{
   color: rgb(83, 83, 83);
 }
@@ -71,7 +67,6 @@
   color: rgb(61, 61, 61);
   
 }
-
 .theme-rgb {
 	animation-name: backgroundColorPalette;
 	animation-duration: 8s;
@@ -80,7 +75,6 @@
   font-family: 'Roboto Mono', monospace;
   color: white;
 }
-
 @keyframes backgroundColorPalette {
 	0% {
 		background: #a3413a;
@@ -99,22 +93,16 @@
 	}
 }
 
-
-
-.stuck {
-  position: fixed;
-  margin-top: 0px !important;
-  top: 0;
-}
-
 .header {
   z-index: 2;
   //margin-top: 40vh;
   background: inherit;
-  padding:10px 0px 10px 0px;
-  width: 100%;
+  padding:2vh 0vh 2vh 0vh;
   top: 0;
+  width: 100vw;
+  max-height: 25vh;
 }
+
 .header div h1 {
   overflow: hidden;
 }
@@ -132,15 +120,24 @@
 
 .content {
   z-index: 1;
-  margin-bottom: 25vh;
+  max-height: 50vh;
 }
+
 footer {
-  padding-top: 30px;
-  padding-bottom: 50px;
+  padding-top: 2vh;
+  padding-bottom: 3vh;
+  max-height: 30vh;
   z-index: 2;
-  position: sticky;
+  position:fixed;
+  width: inherit;
   bottom: 0;
+  max-width:inherit;
 }
+
+footer .footer-text{
+  margin-bottom: 0.5rem;
+}
+
 footer ul {
   list-style-type: none;
   display: flex;
