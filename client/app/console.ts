@@ -77,7 +77,7 @@ export const COMMANDS = [
           this.router.navigateByUrl(result[0].url);
           return ['', 2];
         } else {
-          return [`${args[0]}`, 4];
+          return [`no such file or directory: ${args[0]}`, 4];
         }
       }
     }
@@ -113,7 +113,7 @@ export const COMMANDS = [
     usage: '[options] [theme]',
     desc: '[WIP] changes the current theme. use "theme --list" to list current available themes',
     func(args: string[]) {
-      if (args[0]=='--list'){
+      if (args[0]==='--list'){
         let toPrint = 'available themes:\n';
         THEMES.forEach(theme => {
           console.log(theme);
@@ -124,7 +124,9 @@ export const COMMANDS = [
       if (args.length === 1) {
         if (THEMES.includes(args[0])){
           this.theme = args[0];
-          return ['', 2];
+          return ['info: themes are still a work in progress, expect visual issues', 2];
+        } else {
+          return [`no such theme: ${args[0]}`, 4];
         }
       } else {
         return ['', 3];

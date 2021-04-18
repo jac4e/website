@@ -1,5 +1,5 @@
 <div class="theme-{{ theme }} background">
-  <div class="container">
+  <div style="padding-right:0px;" class="container">
     <div class="header row theme-{{ theme }}">
       <!-- replace with navbar component or dynamically loaded from directory-->
       <nav class="col-12 py-0 navbar navbar-expand">
@@ -29,7 +29,7 @@
       </div>
       <router-outlet></router-outlet>
     </div>
-    <footer class="row theme-{{ theme }}">
+    <footer class="row">
       <div class="col-12">
         <ul class="justify-content-center">
           <li>
@@ -50,8 +50,8 @@
         </ul>
       </div>
       <div class="col-12">
-        <p class="footer-text text-center">Copyright 2021 - Jacques Fourie</p>
-        <p class="footer-text text-center">See an issue? <a href="https://github.com/jac4e/website/issues/new">Report
+        <p class="footer-text top text-center">Copyright 2021 - Jacques Fourie</p>
+        <p class="footer-text bottom text-center">See an issue? <a href="https://github.com/jac4e/website/issues/new">Report
             it!</a></p>
       </div>
     </footer>

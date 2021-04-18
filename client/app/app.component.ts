@@ -16,10 +16,10 @@ export class AppComponent implements AfterViewInit {
     router.events.subscribe((event) => {
       // see also 
       if (event instanceof NavigationEnd) {
-        if(window.location.pathname=='/'){
+        if (window.location.pathname === '/') {
           this.location = '~';
         } else {
-          this.location = '~'+window.location.pathname;
+          this.location = '~' + window.location.pathname;
         }
       }
     });
@@ -53,14 +53,14 @@ export class AppComponent implements AfterViewInit {
           break;
         }
         case 4: {
-          // no such file or directory
-          this.output = `${command[0].name}: no such file or directory: ${funcResults[0]}`;
+          // Custom error
+          this.output = `${command[0].name}: ${funcResults[0]}`;
           break;
         }
       }
     }
     // Update Console State
-    var content = document.querySelector('.scrollable') as HTMLElement;
+    let content = document.querySelector('.scrollable') as HTMLElement;
     content.scrollTop = 0;
   }
 }

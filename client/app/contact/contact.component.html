@@ -1,0 +1,33 @@
+<div class="col-12">
+  <h4>Send me a message!</h4>
+</div>
+<div class="col-12">
+    <div id="alert" class="row justify-content-center" [ngClass]="resultClass">
+        <h5>{{ resultTitle }}</h5>
+        <p>{{ resultText }}</p>
+    </div>
+</div>
+<div class="col-12">
+  <form (ngSubmit)="processForm()">
+    <div class="row justify-content-center">
+      <div class="col-sm">
+        <input type="text" name="name" placeholder="Name" [(ngModel)]="name" required>
+      </div>
+      <div class="col-sm">
+        <input type="email" name="email" placeholder="Email" [(ngModel)]="email" email="true">
+      </div>
+      <div class="col-12">
+        <input type="text" name="subject" placeholder="Subject" [(ngModel)]="subject" required>
+      </div>
+      <div class="col-12">
+        <textarea name="message" placeholder="Message" [(ngModel)]="message" required></textarea>
+      </div>
+      <div class="col-md">
+        <input type="text" name="notTodayBot" placeholder="Please type 'human' to prove your humanity" [(ngModel)]="notTodayBot">
+      </div>
+      <div class="col-3">
+        <button type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
