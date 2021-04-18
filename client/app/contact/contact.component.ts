@@ -57,7 +57,7 @@ export class ContactComponent implements OnInit {
       // email does not match
       warning += "Email is invalid: does not match proper email format\n";
     } else {
-      let domain = this.email.match(/(?<=@).+/g)[0];
+      let domain = this.email.match(/@(.+)/i)[1];
       let response = await fetch(`https://dns.google/resolve?name=${encodeURIComponent(domain)}&type=MX`);
       let json = await response.json();
       if (json.Status != 0) {

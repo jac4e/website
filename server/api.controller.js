@@ -1,6 +1,5 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import cors from 'cors';
 import contact from './contact/contact.controller.js';
 
 const router = express.Router();
